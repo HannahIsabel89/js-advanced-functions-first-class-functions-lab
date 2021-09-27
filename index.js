@@ -8,17 +8,15 @@ const returnLastTwoDrivers = function(drivers) {
 
 const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
 
-const drivers = ['Sally', 'Bob', 'Freddy', 'Claudia'];
+const drivers = ['Hannah', 'Faye', 'Marc', 'Kate'];
 
 let result = returnFirstTwoDrivers(drivers);
 console.log("result1: ", result);
 
 let result1 = returnLastTwoDrivers(drivers);
-console.log("result2: ", result);
+console.log("result2: ", result1);
 
-//higher order function
 const createFareMultiplier = function (multiplier) {
-// example of closure
 return function (fare) {
   return fare * multiplier;
 }
