@@ -1,38 +1,43 @@
+const drivers = ['Sally', 'Bob', 'Freddy', 'Claudia'];
+
+// first two drivers
 const returnFirstTwoDrivers = function(drivers) {
   return drivers.slice(0,2);
 }
+let result = returnFirstTwoDrivers(drivers);
+console.log("First two drivers: ", result);
 
+// last two drivers
 const returnLastTwoDrivers = function(drivers) {
   return drivers.slice(-2);
 }
+let result1 = returnLastTwoDrivers(drivers);
+console.log("Last two drivers: ", result1);
+
 
 const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
 
-const drivers = ['Hannah', 'Faye', 'Marc', 'Kate'];
-
-let result = returnFirstTwoDrivers(drivers);
-console.log("result1: ", result);
-
-let result1 = returnLastTwoDrivers(drivers);
-console.log("result2: ", result1);
-
+// fare calculator
 const createFareMultiplier = function (multiplier) {
-return function (fare) {
-  return fare * multiplier;
+  return function (fare) {
+    return fare * multiplier;
+  }
 }
-}
-const fareDoubler = createFareMultiplier(2);
 
-const fareTripler = createFareMultiplier(3);
+const doubled = createFareMultiplier(2);
 
-let totalFare = fareDoubler(30);
-console.log ('Total doubled fare: ', totalFare);
+const triple = createFareMultiplier(3);
 
-let totalFare2 = fareTripler(30);
-console.log ('Total tripled fare: ', totalFare2);
+let doubledFinal = doubled(30);
+console.log(doubledFinal);
 
-const selectDifferentDrivers = function (drivers,driversToReturn) {
-return driversToReturn(drivers);
-}
+let tripledFinal = triple(30);
+console.log(tripledFinal);
+
+// select other drivers
+// ??? from answer guide... thought names were meant to be swapped, but maybe not?
+const selectDifferentDrivers = function (drivers,driversChosen) {
+  return driversChosen(drivers);
+  }
 let selectedDrivers = selectDifferentDrivers(drivers, returnLastTwoDrivers);
 console.log('selectedDrivers: ', selectedDrivers);
